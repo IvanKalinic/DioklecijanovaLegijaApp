@@ -1,5 +1,4 @@
-﻿using System.Web;
-using System.Web.Optimization;
+﻿using System.Web.Optimization;
 
 namespace DioklecijanovaLegija
 {
@@ -23,7 +22,7 @@ namespace DioklecijanovaLegija
                       "~/Scripts/bootstrap.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
+                      "~/Content/bootstrap-cosmo.css",
                       "~/Content/site.css"));
         }
     }
