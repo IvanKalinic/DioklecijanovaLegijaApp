@@ -170,6 +170,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\MembersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -180,6 +181,14 @@
     <Compile Include="Migrations\202004141120082_AddSoldierTypeTable.cs" />
     <Compile Include="Migrations\202004141120082_AddSoldierTypeTable.Designer.cs">
       <DependentUpon>202004141120082_AddSoldierTypeTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004141138590_PopulateSoldierTypesTable.cs" />
+    <Compile Include="Migrations\202004141138590_PopulateSoldierTypesTable.Designer.cs">
+      <DependentUpon>202004141138590_PopulateSoldierTypesTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004141157169_PopulateMembersTable.cs" />
+    <Compile Include="Migrations\202004141157169_PopulateMembersTable.Designer.cs">
+      <DependentUpon>202004141157169_PopulateMembersTable.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -251,6 +260,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Members\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -271,6 +281,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202004141120082_AddSoldierTypeTable.resx">
       <DependentUpon>202004141120082_AddSoldierTypeTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004141138590_PopulateSoldierTypesTable.resx">
+      <DependentUpon>202004141138590_PopulateSoldierTypesTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004141157169_PopulateMembersTable.resx">
+      <DependentUpon>202004141157169_PopulateMembersTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
