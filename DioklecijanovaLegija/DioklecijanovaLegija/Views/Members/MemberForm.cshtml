@@ -1,0 +1,45 @@
+﻿@model DioklecijanovaLegija.ViewModels.MemberFormViewModel
+@{
+    ViewBag.Title = "MemberForm";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>@Model.Title</h2>
+@using (Html.BeginForm("Save", "Members"))
+{
+    @Html.ValidationSummary(true, "Please fix the following errors.")
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Member.Name)
+        @Html.TextBoxFor(m => m.Member.Name, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Member.Name)
+    </div>
+    <div class="form-group">
+        @*<label for="BirthDate">Date of Birth</label>    u ovom slučaju donja linija nije potrebna, ali moramo vodit računa o imenu propertya svaki put kod ovog id-a*@
+        @Html.LabelFor(m => m.Member.BirthDate)
+        @Html.TextBoxFor(m => m.Member.BirthDate, "{0:d MMM yyyy}", new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Member.BirthDate)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Member.PhoneNumber)
+        @Html.TextBoxFor(m => m.Member.PhoneNumber, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Member.Address)
+        @Html.TextBoxFor(m => m.Member.Address, new { @class = "form-control" })
+    </div>
+    @*<div class="form-group">
+            @Html.LabelFor(m => m.Name)
+            @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+        </div>*@
+    <div class="form-group">
+        @Html.LabelFor(m => m.Member.SoldierTypeId)
+        @Html.DropDownListFor(m => m.Member.SoldierTypeId, new SelectList(Model.SoldierTypes, "Id", "Type"), "Select soldier type", new { @class = "form-control" })
+    </div>
+    @Html.HiddenFor(m => m.Member.Id)
+    @Html.AntiForgeryToken()
+    <button type="submit" class="btn btn-default">Save</button>
+}
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+}

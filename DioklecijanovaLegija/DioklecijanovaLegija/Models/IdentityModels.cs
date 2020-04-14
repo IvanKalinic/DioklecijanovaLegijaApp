@@ -27,6 +27,12 @@ namespace DioklecijanovaLegija.Models
             : base("DefaultConnection", throwIfV1Schema: false)
         {
         }
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+
+
+            base.OnModelCreating(modelBuilder);
+        }
 
         public static ApplicationDbContext Create()
         {
