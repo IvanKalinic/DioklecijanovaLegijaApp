@@ -171,6 +171,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MembersController.cs" />
+    <Compile Include="EntityTypeConfigurations\MemberConfiguration.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -189,6 +190,14 @@
     <Compile Include="Migrations\202004141157169_PopulateMembersTable.cs" />
     <Compile Include="Migrations\202004141157169_PopulateMembersTable.Designer.cs">
       <DependentUpon>202004141157169_PopulateMembersTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004141601512_AddFluentAPI.cs" />
+    <Compile Include="Migrations\202004141601512_AddFluentAPI.Designer.cs">
+      <DependentUpon>202004141601512_AddFluentAPI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004141752444_NewMigration1.cs" />
+    <Compile Include="Migrations\202004141752444_NewMigration1.Designer.cs">
+      <DependentUpon>202004141752444_NewMigration1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -290,6 +299,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202004141157169_PopulateMembersTable.resx">
       <DependentUpon>202004141157169_PopulateMembersTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004141601512_AddFluentAPI.resx">
+      <DependentUpon>202004141601512_AddFluentAPI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004141752444_NewMigration1.resx">
+      <DependentUpon>202004141752444_NewMigration1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

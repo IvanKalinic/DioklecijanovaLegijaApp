@@ -58,6 +58,7 @@ namespace DioklecijanovaLegija.Controllers
             return View("MemberForm", viewModel);
         }
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Save(Member member)
         {
             if (!ModelState.IsValid)

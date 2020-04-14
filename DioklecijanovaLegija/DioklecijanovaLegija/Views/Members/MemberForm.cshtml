@@ -1,13 +1,14 @@
 ﻿@model DioklecijanovaLegija.ViewModels.MemberFormViewModel
 @{
-    ViewBag.Title = "MemberForm";
+    /**/
+
+    ViewBag.Title = "New";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <h2>@Model.Title</h2>
 @using (Html.BeginForm("Save", "Members"))
 {
-    @Html.ValidationSummary(true, "Please fix the following errors.")
-
+    @Html.ValidationSummary()
     <div class="form-group">
         @Html.LabelFor(m => m.Member.Name)
         @Html.TextBoxFor(m => m.Member.Name, new { @class = "form-control" })
@@ -22,6 +23,7 @@
     <div class="form-group">
         @Html.LabelFor(m => m.Member.PhoneNumber)
         @Html.TextBoxFor(m => m.Member.PhoneNumber, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Member.PhoneNumber)
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.Member.Address)
@@ -34,6 +36,7 @@
     <div class="form-group">
         @Html.LabelFor(m => m.Member.SoldierTypeId)
         @Html.DropDownListFor(m => m.Member.SoldierTypeId, new SelectList(Model.SoldierTypes, "Id", "Type"), "Select soldier type", new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Member.SoldierTypeId)
     </div>
     @Html.HiddenFor(m => m.Member.Id)
     @Html.AntiForgeryToken()

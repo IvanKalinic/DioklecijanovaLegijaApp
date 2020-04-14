@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNet.Identity;
+﻿using DioklecijanovaLegija.EntityTypeConfigurations;
+using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using System.Data.Entity;
 using System.Security.Claims;
@@ -29,7 +30,7 @@ namespace DioklecijanovaLegija.Models
         }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-
+            modelBuilder.Configurations.Add(new MemberConfiguration());
 
             base.OnModelCreating(modelBuilder);
         }
