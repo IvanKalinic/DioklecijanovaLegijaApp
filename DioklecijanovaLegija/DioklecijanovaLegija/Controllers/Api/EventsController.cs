@@ -7,11 +7,11 @@ using System.Web.Http;
 
 namespace DioklecijanovaLegija.Controllers.Api
 {
-    public class MoviesController : ApiController
+    public class EventsController : ApiController
     {
         private ApplicationDbContext _context;
 
-        public MoviesController()
+        public EventsController()
         {
             _context = new ApplicationDbContext();
         }
