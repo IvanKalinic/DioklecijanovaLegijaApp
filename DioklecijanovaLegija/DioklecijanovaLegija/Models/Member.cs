@@ -11,6 +11,7 @@ namespace DioklecijanovaLegija.Models
         public string Name { get; set; }
 
         [Display(Name = "Date of birth")]
+        [Min18YearsIfAMember]
         public DateTime? BirthDate { get; set; }
 
         [Display(Name = "Phone number")]

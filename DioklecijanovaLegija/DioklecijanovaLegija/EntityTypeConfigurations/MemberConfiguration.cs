@@ -7,12 +7,12 @@ namespace DioklecijanovaLegija.EntityTypeConfigurations
     {
         public MemberConfiguration()
         {
-            Property(m => m.Name)
-                .IsRequired()
-                .HasMaxLength(255);
+            //Property(m => m.Name)
+            //    .IsRequired()
+            //    .HasMaxLength(255);
 
-            Property(m => m.SoldierTypeId)
-                .IsRequired();
+            //Property(m => m.SoldierTypeId)
+            //    .IsRequired();
 
 
         }
