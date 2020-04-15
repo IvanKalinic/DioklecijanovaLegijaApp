@@ -23,6 +23,8 @@ namespace DioklecijanovaLegija.Models
     {
         public DbSet<Member> Members { get; set; }
         public DbSet<SoldierType> SoldierTypes { get; set; }
+        public DbSet<Event> Events { get; set; }
+
 
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
@@ -31,6 +33,7 @@ namespace DioklecijanovaLegija.Models
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Configurations.Add(new MemberConfiguration());
+            modelBuilder.Configurations.Add(new EventConfiguration());
 
             base.OnModelCreating(modelBuilder);
         }
