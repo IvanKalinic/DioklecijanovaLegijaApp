@@ -2,6 +2,7 @@
 using DioklecijanovaLegija.Dtos;
 using DioklecijanovaLegija.Models;
 using System;
+using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Web.Http;
@@ -19,7 +20,10 @@ namespace DioklecijanovaLegija.Controllers.Api
         //GET /api/members
         public IHttpActionResult GetMembers()
         {
-            var memberDtos = _context.Members.ToList().Select(Mapper.Map<Member, MemberDto>);
+            var memberDtos = _context.Members
+                .Include(m => m.SoldierType)
+                .ToList().Select(Mapper.Map<Member, MemberDto>);
+
             return Ok(memberDtos);
         }
 

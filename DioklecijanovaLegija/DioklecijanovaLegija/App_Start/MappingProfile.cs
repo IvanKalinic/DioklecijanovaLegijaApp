@@ -10,6 +10,7 @@ namespace DioklecijanovaLegija.App_Start
         {
             Mapper.CreateMap<Member, MemberDto>();
             Mapper.CreateMap<Event, EventDto>();
+            Mapper.CreateMap<SoldierType, SoldierTypeDto>();
 
 
 

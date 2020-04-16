@@ -7,6 +7,7 @@
     <thead>
         <tr>
             <th>Member</th>
+            <th>Soldier Type</th>
             <th>Delete</th>
         </tr>
     </thead>
@@ -27,6 +28,9 @@
                         render: function (data, type, member) {
                             return "<a href='/members/edit/" + member.id + "'>" + member.name + "</a>";
                         }
+                    },
+                    {
+                        data: "soldierType.type"
                     },
                     {
                         data: "id",

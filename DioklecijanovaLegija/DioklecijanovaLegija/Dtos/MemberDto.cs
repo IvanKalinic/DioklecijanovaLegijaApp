@@ -21,5 +21,7 @@ namespace DioklecijanovaLegija.Dtos
 
         public byte SoldierTypeId { get; set; }
 
+        public SoldierTypeDto SoldierType { get; set; }
+
     }
 }

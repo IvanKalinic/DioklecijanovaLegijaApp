@@ -190,6 +190,7 @@
     <Compile Include="Controllers\MembersController.cs" />
     <Compile Include="Dtos\EventDto.cs" />
     <Compile Include="Dtos\MemberDto.cs" />
+    <Compile Include="Dtos\SoldierTypeDto.cs" />
     <Compile Include="EntityTypeConfigurations\EventConfiguration.cs" />
     <Compile Include="EntityTypeConfigurations\MemberConfiguration.cs" />
     <Compile Include="Global.asax.cs">
@@ -238,6 +239,10 @@
     <Compile Include="Migrations\202004151425553_AddMaxLengthToNamePropertyInEventsTable.cs" />
     <Compile Include="Migrations\202004151425553_AddMaxLengthToNamePropertyInEventsTable.Designer.cs">
       <DependentUpon>202004151425553_AddMaxLengthToNamePropertyInEventsTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004161116182_PopulateMoreEvents.cs" />
+    <Compile Include="Migrations\202004161116182_PopulateMoreEvents.Designer.cs">
+      <DependentUpon>202004161116182_PopulateMoreEvents.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -541,6 +546,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202004151425553_AddMaxLengthToNamePropertyInEventsTable.resx">
       <DependentUpon>202004151425553_AddMaxLengthToNamePropertyInEventsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004161116182_PopulateMoreEvents.resx">
+      <DependentUpon>202004161116182_PopulateMoreEvents.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
