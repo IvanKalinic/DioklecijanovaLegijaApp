@@ -1,22 +1,24 @@
 ﻿@model IEnumerable<DioklecijanovaLegija.Models.Event>
-    @{
-        ViewBag.Title = "Index";
-        Layout = "~/Views/Shared/_Layout.cshtml";
-    }
-    <h2>Events</h2>
-    <p>@Html.ActionLink("New event", "New", "Events", null, new { @class = "btn btn-default" })</p>
-    <table class="table table-striped table-hover ">
-        <thead>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Events</h2>
+<p>@Html.ActionLink("New event", "New", "Events", null, new { @class = "btn btn-default" })</p>
+<table class="table table-striped table-hover ">
+    <thead>
+        <tr>
+            <th>Events</th>
+            <th>Members on event</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var upcomingEvent in Model)
+        {
             <tr>
-                <th>Events</th>
+                <td>@Html.ActionLink(upcomingEvent.Name, "Edit", "Events", new { id = upcomingEvent.Id }, null)</td>
+                <td>@Html.ActionLink("See more", "FindMembers", "Events", new { id = upcomingEvent.Id }, null)</td>
             </tr>
-        </thead>
-        <tbody>
-            @foreach (var upcomingEvent in Model)
-            {
-                <tr>
-                    <td>@Html.ActionLink(upcomingEvent.Name, "Edit", "Events", new { id = upcomingEvent.Id }, null)</td>
-                </tr>
-            }
-        </tbody>
-    </table>
+        }
+    </tbody>
+</table>

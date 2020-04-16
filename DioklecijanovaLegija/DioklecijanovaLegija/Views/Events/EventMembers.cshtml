@@ -1,0 +1,16 @@
+﻿@model IEnumerable<DioklecijanovaLegija.Models.Event>
+@{
+    ViewBag.Title = "EventMembers";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Event members</h2>
+<ul>
+    @foreach (var members in Model)
+    {
+
+        foreach (var member in members.Members)
+        {
+            <li>@member.Name</li>
+        }
+    }
+</ul>

@@ -1,10 +1,15 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace DioklecijanovaLegija.Models
 {
     public class Member
     {
+        public Member()
+        {
+            this.Events = new HashSet<Event>();
+        }
         public int Id { get; set; }
 
         [Required]
@@ -25,5 +30,7 @@ namespace DioklecijanovaLegija.Models
         public byte SoldierTypeId { get; set; }
 
         public SoldierType SoldierType { get; set; }
+
+        public ICollection<Event> Events { get; set; }
     }
 }

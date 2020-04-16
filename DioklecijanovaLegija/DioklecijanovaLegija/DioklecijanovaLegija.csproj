@@ -244,6 +244,18 @@
     <Compile Include="Migrations\202004161116182_PopulateMoreEvents.Designer.cs">
       <DependentUpon>202004161116182_PopulateMoreEvents.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202004161333566_AddManyToManyRelationship.cs" />
+    <Compile Include="Migrations\202004161333566_AddManyToManyRelationship.Designer.cs">
+      <DependentUpon>202004161333566_AddManyToManyRelationship.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004161559438_PopulateMemberEventTable.cs" />
+    <Compile Include="Migrations\202004161559438_PopulateMemberEventTable.Designer.cs">
+      <DependentUpon>202004161559438_PopulateMemberEventTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004161956073_PopulateMoreMemberEvents.cs" />
+    <Compile Include="Migrations\202004161956073_PopulateMoreMemberEvents.Designer.cs">
+      <DependentUpon>202004161956073_PopulateMoreMemberEvents.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Event.cs" />
@@ -496,6 +508,7 @@
     <Content Include="Views\Events\Index.cshtml" />
     <Content Include="Views\Events\Details.cshtml" />
     <Content Include="Views\Events\EventForm.cshtml" />
+    <Content Include="Views\Events\EventMembers.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -549,6 +562,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202004161116182_PopulateMoreEvents.resx">
       <DependentUpon>202004161116182_PopulateMoreEvents.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004161333566_AddManyToManyRelationship.resx">
+      <DependentUpon>202004161333566_AddManyToManyRelationship.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004161559438_PopulateMemberEventTable.resx">
+      <DependentUpon>202004161559438_PopulateMemberEventTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004161956073_PopulateMoreMemberEvents.resx">
+      <DependentUpon>202004161956073_PopulateMoreMemberEvents.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

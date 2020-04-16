@@ -1,5 +1,6 @@
 ﻿using DioklecijanovaLegija.Models;
 using DioklecijanovaLegija.ViewModels;
+using System.Data.Entity;
 using System.Linq;
 using System.Web.Mvc;
 
@@ -16,6 +17,13 @@ namespace DioklecijanovaLegija.Controllers
         protected override void Dispose(bool disposing)
         {
             _context.Dispose();
+        }
+        public ActionResult FindMembers(int id)
+        {
+            var members = _context.Events.Include(e => e.Members).Where(e => e.Id == id).ToList();
+
+            return View("EventMembers", members);
+
         }
         public ActionResult Index()
         {
@@ -83,7 +91,6 @@ namespace DioklecijanovaLegija.Controllers
 
 
             _context.SaveChanges();
-
 
             return RedirectToAction("Index", "Events");
 
