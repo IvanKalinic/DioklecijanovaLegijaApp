@@ -22,9 +22,11 @@ namespace DioklecijanovaLegija.Controllers
 
         public ActionResult Index()
         {
-            var members = _context.Members.Include(m => m.SoldierType).ToList();
+            //var members = _context.Members.Include(m => m.SoldierType).ToList();
 
-            return View(members);
+            //return View(members);
+
+            return View();
         }
         public ActionResult Details(int id)
         {
