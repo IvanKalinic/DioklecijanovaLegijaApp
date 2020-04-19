@@ -14,7 +14,7 @@ namespace DioklecijanovaLegija.Models
         public int Id { get; set; }
 
         [Required]
-        [MaxLength(255)]
+        [StringLength(255)]
         public string Name { get; set; }
 
         public DateTime? DateOfEvent { get; set; }

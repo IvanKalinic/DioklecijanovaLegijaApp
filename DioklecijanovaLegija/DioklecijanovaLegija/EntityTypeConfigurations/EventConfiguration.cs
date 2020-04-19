@@ -9,6 +9,10 @@ namespace DioklecijanovaLegija.EntityTypeConfigurations
         {
             //Property(e => e.NumberOfMembers)
             //    .HasColumnName("NumberOfMembers");
+
+            Property(e => e.Name)
+                .IsRequired()
+                .HasMaxLength(255);
         }
     }
 }

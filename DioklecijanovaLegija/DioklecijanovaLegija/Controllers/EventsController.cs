@@ -62,8 +62,8 @@ namespace DioklecijanovaLegija.Controllers
             };
 
             return View("EventForm", viewModel);
-
         }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Save(Event upcomingEvent)
@@ -76,24 +76,36 @@ namespace DioklecijanovaLegija.Controllers
                 };
                 return View("EventForm", viewModel);
             }
-            //if (upcomingEvent.Id == 0)
-            //{
-            //    _context.Events.Add(upcomingEvent);
-            //}
             else
             {
-                var eventInDb = _context.Events.Single(e => e.Id == upcomingEvent.Id);
-                eventInDb.Name = upcomingEvent.Name;
-                eventInDb.DateOfEvent = upcomingEvent.DateOfEvent;
-                eventInDb.NumberOfMembers = upcomingEvent.NumberOfMembers;
-                eventInDb.Id = upcomingEvent.Id;
-            }
+                if (!IsInEvents(upcomingEvent.Id))
+                    _context.Events.Add(upcomingEvent);
 
+                else
+                {
+                    var eventInDb = _context.Events.Single(e => e.Id == upcomingEvent.Id);
+                    eventInDb.Name = upcomingEvent.Name;
+                    eventInDb.DateOfEvent = upcomingEvent.DateOfEvent;
+                    eventInDb.NumberOfMembers = upcomingEvent.NumberOfMembers;
+                    eventInDb.Id = upcomingEvent.Id;
+                }
+            }
 
             _context.SaveChanges();
 
             return RedirectToAction("Index", "Events");
 
+        }
+        public bool IsInEvents(int id)
+        {
+            var events = _context.Events.ToList();
+
+            foreach (var existingEvent in events)
+            {
+                if (existingEvent.Id == id)
+                    return true;
+            }
+            return false;
         }
     }
 }

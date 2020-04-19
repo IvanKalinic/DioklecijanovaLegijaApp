@@ -9,6 +9,7 @@
     <thead>
         <tr>
             <th>Events</th>
+            <th>Date of event</th>
             <th>Members on event</th>
         </tr>
     </thead>
@@ -17,6 +18,7 @@
         {
             <tr>
                 <td>@Html.ActionLink(upcomingEvent.Name, "Edit", "Events", new { id = upcomingEvent.Id }, null)</td>
+                <td>@upcomingEvent.DateOfEvent.Value.ToShortDateString()</td>
                 <td>@Html.ActionLink("See more", "FindMembers", "Events", new { id = upcomingEvent.Id }, null)</td>
             </tr>
         }

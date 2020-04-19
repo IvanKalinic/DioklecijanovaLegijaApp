@@ -1,5 +1,7 @@
 ﻿@model IEnumerable<DioklecijanovaLegija.Models.Event>
 @{
+    /**/
+
     ViewBag.Title = "EventMembers";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
@@ -10,7 +12,7 @@
 
         foreach (var member in members.Members)
         {
-            <li>@member.Name</li>
+            <li>@Html.ActionLink(@member.Name, "Edit", "Members", new { id = member.Id }, null)</li>
         }
     }
 </ul>
