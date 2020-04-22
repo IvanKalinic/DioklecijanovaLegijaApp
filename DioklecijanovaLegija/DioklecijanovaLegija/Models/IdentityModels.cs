@@ -24,6 +24,7 @@ namespace DioklecijanovaLegija.Models
         public DbSet<Member> Members { get; set; }
         public DbSet<SoldierType> SoldierTypes { get; set; }
         public DbSet<Event> Events { get; set; }
+        public DbSet<Calendar> Calendars { get; set; }
 
 
         public ApplicationDbContext()
